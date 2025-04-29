@@ -88,12 +88,12 @@ int main() {
                 if (early) {
                     DrawText("You jumped the start...",
                              w/2 - MeasureText("You jumped the start...", 30)/2,
-                             h/2 - 30,
+                             h/2 - 15,
                              30, WHITE);
                 } else {
                     DrawText("You can't be that slow...",
                              w/2 - MeasureText("You can't be that slow...", 30)/2,
-                             h/2 - 30,
+                             h/2 - 15,
                              30, WHITE);
                 }
                 DrawText("Press Space or Click to try again",
