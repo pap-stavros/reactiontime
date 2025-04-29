@@ -159,7 +159,7 @@ int main() {
                 DrawText("Press Space or Click to try again",
                          w/2 - MeasureText("Press Space or Click to try again", 20)/2,
                          h/2 + 30,
-                         20, RAYWHITE);
+                         20, DARKGRAY);
                 break;
         }
         
