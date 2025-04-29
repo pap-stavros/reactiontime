@@ -1,6 +1,6 @@
-# Reaction Time Game
+# Reaction time with C++/Raylib
 
-A simple reaction time measurement game built with [Raylib](https://www.raylib.com/)
+A simple reaction time measurement game I made for practice.
 
 ## Building from Source
 
