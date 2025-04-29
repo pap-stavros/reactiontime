@@ -25,4 +25,3 @@ g++ -o build.exe t.cpp -lraylib -lopengl32 -lgdi32 -lwinmm
 
 - Built with [Raylib](https://www.raylib.com/)
 - Inspired by sleep deprivation
-- MIT License
