@@ -7,6 +7,7 @@ enum GameState { //self explanatory.
     wait,
     red,
     green,
+    fail,
     results
 };
 
@@ -48,10 +49,34 @@ int main() {
                     if (IsKeyPressed(KEY_SPACE) || IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                         rt = cTime;
                         gs = results;
+                    } else if (cTime > 2.0) {
+                        gs = fail;
                     }
                 }
+                char liveT[20];
+                sprintf(liveT, "%.3f", cTime);
+                DrawText(liveT,
+                         w/2 - MeasureText(liveT, 33)/2,
+                         h/2 + 30,
+                         33, WHITE);
                 break;
+
                 
+            case fail:  // tells grandpa hes getting slow
+                if (IsKeyPressed(KEY_SPACE) || IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                    gs = wait;
+                }
+                ClearBackground(BLACK);
+                DrawText("You can't be that slow...",
+                         w/2 - MeasureText("You can't be that slow...", 30)/2,
+                         h/2 - 30,
+                         30, WHITE);
+                DrawText("Press Space or Click to try again",
+                         w/2 - MeasureText("Press Space or Click to try again", 20)/2,
+                         h/2 + 30,
+                         20, DARKGRAY);
+                break;
+
             case results: //displays results and waits for restart.
                 if (IsKeyPressed(KEY_SPACE) || IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                     gs = wait;
@@ -63,11 +88,11 @@ int main() {
         
         switch (gs) {
             case wait:
-                ClearBackground(RAYWHITE);
+                ClearBackground(BLACK);
                 DrawText("Press Space or Click to Start",
                          w/2 - MeasureText("Press Space or Click to Start", 30)/2,
                          h/2 - 15,
-                         30, DARKGRAY);
+                         30, RAYWHITE);
                 break;
                 
             case red:
@@ -96,17 +121,17 @@ int main() {
                 break;
                 
             case results:
-                ClearBackground(RAYWHITE);
+                ClearBackground(BLACK);
                 char rText[50];
                 sprintf(rText, "Your reaction time: %.3f sec", rt);
                 DrawText(rText,
                          w/2 - MeasureText(rText, 30)/2,
                          h/2 - 15,
-                         30, DARKBLUE);
+                         30, RAYWHITE);
                 DrawText("Press Space or Click to try again",
                          w/2 - MeasureText("Press Space or Click to try again", 20)/2,
                          h/2 + 30,
-                         20, DARKGRAY);
+                         20, RAYWHITE);
                 break;
         }
         
