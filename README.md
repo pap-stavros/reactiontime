@@ -21,11 +21,8 @@ g++ -o build t.cpp -lraylib -lm -lpthread -ldl -lX11
 g++ -o build.exe t.cpp -lraylib -lopengl32 -lgdi32 -lwinmm
 ```
 
-## License
-
-This project is available under the MIT License - see the LICENSE file for details.
-
 ## Stuff
 
 - Built with [Raylib](https://www.raylib.com/)
 - Inspired by sleep deprivation
+- MIT License
