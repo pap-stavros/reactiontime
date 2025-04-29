@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Stavros Papachristodoulou
+
 #include "raylib.h"
 #include <cstdlib>
 #include <ctime>
